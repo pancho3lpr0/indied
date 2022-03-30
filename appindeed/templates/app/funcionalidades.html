@@ -1,0 +1,110 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block contenido %}
+		<!-- Main -->
+				<div id="main">
+					<div class="container">
+						<div class="row main-row">
+							
+							<div class="col-10 col-12-medium imp-medium">
+
+								<section class="middle-content">
+									<ul>
+										<h2>Empleos</h2>
+										{% for empleo in empleos%}
+										<li>
+											
+											<!--<a><img src="{% static 'images/pic2.jpg' %}" alt="" class="left" /></a>-->
+											
+											<h4 style="color: blue;">{{ empleo.titulo }}</h4>
+											<p>{{ empleo.ubicacion }}</p>
+											<p>{{ empleo.salario_tiempo }}</p>
+											<section>
+												<pre style="height: 300px; overflow-y: auto;">{{ empleo.descripcion }}</pre>
+												<br>
+											</section>
+										</li>
+										{% endfor %}
+									</ul>
+								</section>
+
+							</div>
+							<div class="col-2 col-12-medium">
+
+								<section>
+									<h2>Funciones</h2>
+									<ul class="link-list">
+										<li><a href="https://www.bizneo.com/blog/sistema-de-seguimiento-de-candidatos/">Seguimiento de candidatos</a></li>
+										<li><a href="https://docs.microsoft.com/es-es/sql/database-engine/availability-groups/windows/resume-an-availability-database-sql-server?view=sql-server-ver15#:~:text=La%20reanudaci%C3%B3n%20de%20una%20base,la%20base%20de%20datos%20principal.">Reanudar base de datos</a></li>
+										<li><a href="https://www.icims.com/es/blog/job-posting-cose-e-quanto-e-utile-per-i-recruiter/">Publicación de ofertas de empleo</a></li>
+										<li><a href="https://support-companies.gupy.io/hc/es/articles/360056528613-C%C3%B3mo-usar-la-programaci%C3%B3n-de-entrevistas">Programación de entrevistas</a></li>
+										<li><a href="https://manageengine.com.mx/servicedesk-plus/que-es-ejemplos-de-portal-de-autoservicio#:~:text=Los%20portales%20de%20autoservicio%20brindan,depender%20directamente%20de%20los%20t%C3%A9cnicos.">Portal de autoservicio</a></li>
+										<li><a href="https://blogcandidatos.springspain.com/talent-management/que-es-un-perfil-de-candidato-en-la-contratacion/">Perfiles de candidatos</a></li>
+										<li><a href="https://woocommerce.com/document/paneles-de-actividad/#:~:text=El%20panel%20de%20actividad%20tiene,el%20funcionamiento%20de%20tu%20tienda.">Panel de actividades</a></li>
+										<li><a href="https://asana.com/es/resources/introduction-to-work-management">Gestión de trabajos</a></li>
+										<li><a href="https://www.processmaker.com/es/blog/workflow-management/">Gestión de flujos de trabajo</a></li>
+										<li><a href="https://qulture.rocks/es/blog/evaluacion-de-desempeno-como-funciona/#:~:text=La%20gesti%C3%B3n%20de%20desempe%C3%B1o%20es%20un%20proceso%20que%20se%20da,inicio%20de%20un%20nuevo%20ciclo.">Gestión de evaluaciones</a></li>
+										<li><a href="https://manageengine.com.mx/blog_v2_post/el-que-el-por-que-y-el-como-de-la-gestion-de-aplicaciones-moviles">Gestión de aplicaciones</a></li>
+										<li><a href="https://www.sage.com/es-es/blog/diccionario-empresarial/facturacion/">Facturación</a></li>
+										<li><a href="https://www.billin.net/glosario/definicion-empleador/">Cuentas de empleador</a></li>
+										<li><a href="https://www.dynasolutions.com/publicaciones/pdf/23.pdf">Creación de informes y estadísticas</a></li>
+										<li><a href="http://www.navarra.es/home_es/Temas/Empleo+y+Economia/Empleo/Empleo/Orientacion+Laboral/riiopn/home/Trabajar/Busqueda+de+Empleo/Guia+Empleo/Plan+Busqueda/Herramientas+de+busqueda/Curriculum.htm">Búsqueda de CV</a></li>
+										<li><a href="https://support.personio.de/hc/es/articles/360010193018-An%C3%A1lisis-de-CV-Creaci%C3%B3n-manual-de-perfiles-de-candidatos-a-partir-de-sus-curr%C3%ADculum#:~:text=El%20an%C3%A1lisis%20de%20CV%20es,o%20su%20n%C3%BAmero%20de%20tel%C3%A9fono.">Análisis de CV</a></li>
+									</ul>
+								</section>
+
+								<!--<section>
+									<h2>otras funciones</h2>
+									<p>Portal de autoservicio <br>El portal de autoservicio es un canal de comunicación orientado a crear mayor satisfacción en el servicio TI. En concreto, los clientes pueden: ... Automatizar procesos de gestión del servicio como la recepción de peticiones de servicio e incidencias, asignaciones o notificaciones.</p>
+									<p>Programación de entrevistas <br>La herramienta de programación de eventos puede ser de utilidad en el momento de marcar entrevistas con las personas implicadas en su proceso de selección. Con esta herramienta puede marcar y enviar invitaciones de entrevistas directamente desde la plataforma, de un modo simple y ágil. También puede invitar a otras personas reclutadoras a la reunión y configurar guiones de entrevista prácticos que estarán disponibles para todas las personas colaboradoras.</p>
+									<p>Publicación de ofertas de empleo <br>Por anuncio de empleo se entiende la publicación de una oferta de trabajo en uno o más canales específicos, como pueden ser, por ejemplo, los sitios temáticos de búsqueda de personal, los tablones de anuncios o las redes sociales.</p>
+									<p>Reanudar base de datos <br>La reanudación de una base de datos suspendida coloca la base de datos en el estado SYNCHRONIZING. La reanudación de la base de datos principal también reanuda cualquiera de las bases de datos secundarias suspendidas como resultado de suspender la base de datos principal.</p>
+									<p>Seguimiento de candidatos <br>La información de los diferentes candidatos se ordena en función de una serie de palabras clave y se almacena. El proceso es automático y responde a la configuración que más le convenga a la empresa. Además, se mejora la trazabilidad de cada candidatura y es posible dividirlas para cada trabajo.</p>
+									<p>Gestión de trabajos <br>Es un enfoque sistemático para coordinar los flujos de trabajo de una organización, como proyectos, procesos continuos o tareas de rutina, para proporcionar la claridad que los equipos necesitan para alcanzar sus objetivos más rápido.</p>
+									<p>Panel de actividades <br>El panel de actividad tiene como objetivo ser una «vista única» para gestionar la empresa: completar nuevos pedidos, gestionar el inventario de productos, moderar las valoraciones y obtener información sobre el funcionamiento de la empresa.</p>
+									<p>Perfiles de candidatos <br>Un perfil de candidato es una descripción detallada de un puesto vacante en una empresa y el candidato ideal que ocupará ese puesto. También puede describir las plataformas y los métodos de contratación que la empresa utilizará para encontrar candidatos. Si se usa internamente, un perfil de candidato puede ayudar al equipo de contratación a comprender el puesto para el que están contratando y ayudar a asegurarse de que evalúen a los candidatos de manera justa.</p>
+								</section>-->
+
+							</div>
+							<!--<div class="col-2 col-12-medium">
+
+								<section>
+									<ul class="small-image-list">
+										<h2>Funciones de Indeed</h2>
+									<p>Análisis de CV <br>El análisis de CV es una función que permite analizar y guardar automáticamente la información contenida en un currículum. De esta forma, podrás extraer y guardar datos básicos importantes del currículum de un candidato como, por ejemplo, el nombre, la dirección de correo electrónico o su número de teléfono.</p>
+									<p>Busqueda de CV <br>En tu CV buscarán el tipo adecuado de experiencia. Cerciórate de que tu experiencia, ya sea de seis meses en un rol o cuatro años en otro, sea coherente y relevante para el empleo al que estás postulando. Sé claro cuando aportes valor añadido, así como al explicar contribución exacta en algún proyecto importante.</p>
+									<p>Creación de informes y estadisticas <br>El informe estadístico es un documento que presenta los resultados de los análisis estadísticos realizados en un estudio. Para comprender lo que se debe esperar de un informe estadístico es necesario que el lector tenga previos conocimientos para la realización del mismo.</p>
+									<p>Cuentas de empleador <br>Empleador es, en un contrato de trabajo, la parte que provee pago de una remuneración o salario.</p>
+									<p>Facturación <br>Llevar al día la facturación es básico para cualquier autónomo o microempresa. Y es que, según la Ley del IVA, los empresarios o profesionales están obligados a expedir factura y copia de esta por las entregas de bienes y prestaciones de servicios que realicen en el desarrollo de su actividad, incluidas las no sujetas y las sujetas pero exentas del Impuesto.</p>
+									<p>Gestión de aplicaciones <br>Es un término que se refiere a la gestión del ciclo de vida completo de las aplicaciones, incluyendo la instalación, actualización y desinstalación de aplicaciones de los dispositivos. Además de administrar un dispositivo a lo largo de su ciclo de vida, MAM también incluye la protección de los datos a los que acceden las aplicaciones y la eliminación de aplicaciones maliciosas cuando se encuentran en los dispositivos.</p>
+									<p>Gestión de evaluaciones <br>La gestión de desempeño es un proceso que se da en ciclos: empiezan con el establecimiento de expectativas de desempeño (que son metas, indicadores, competencias y comportamientos) y terminan con la evaluación de ese desempeño y con el subsecuente inicio de un nuevo ciclo.</p>
+									<p>Gestión de flujos de trabajo <br>Un flujo de trabajo es una secuencia de tareas que forman parte de una tarea más amplia. Un flujo de trabajo pretende ayudar a conseguir un objetivo empresarial predefinido. Las organizaciones utilizan la gestión de flujos de trabajo para producir mejores resultados basados en un conjunto de objetivos específicos. <br>Muchas organizaciones utilizan los sistemas de flujo de trabajo para automatizar las tareas junto con los principios de gestión. Además de automatizar las tareas, los sistemas de gestión de flujos de trabajo ayudan a las partes interesadas a trazar fácilmente los flujos de trabajo para identificar las tareas repetitivas, los cuellos de botella y las oportunidades de mejora.</p>
+									
+										<li>
+											<a href="#"><img src="{% static 'images/pic1.jpg' %}" alt="" class="left" /></a>
+											<h4>James Doe</h4>
+											<p>Vitae magna eget odio amet mollis justo facilisis amet quis. Sed sagittis consequat.</p>
+										</li>
+									</ul>
+								</section>
+
+								<section>
+									<h2>Definiciones</h2>
+									<ul class="link-list">
+										<li><a href="https://asana.com/es/resources/introduction-to-work-management">Gestión de trabajos</a></li>
+										<li><a href="https://www.processmaker.com/es/blog/workflow-management/">Gestión de flujos de trabajo</a></li>
+										<li><a href="https://qulture.rocks/es/blog/evaluacion-de-desempeno-como-funciona/#:~:text=La%20gesti%C3%B3n%20de%20desempe%C3%B1o%20es%20un%20proceso%20que%20se%20da,inicio%20de%20un%20nuevo%20ciclo.">Gestión de evaluaciones</a></li>
+										<li><a href="https://manageengine.com.mx/blog_v2_post/el-que-el-por-que-y-el-como-de-la-gestion-de-aplicaciones-moviles">Gestión de aplicaciones</a></li>
+										<li><a href="https://www.sage.com/es-es/blog/diccionario-empresarial/facturacion/">Facturación</a></li>
+										<li><a href="https://www.billin.net/glosario/definicion-empleador/">Cuentas de empleador</a></li>
+										<li><a href="https://www.dynasolutions.com/publicaciones/pdf/23.pdf">Creación de informes y estadísticas</a></li>
+										<li><a href="http://www.navarra.es/home_es/Temas/Empleo+y+Economia/Empleo/Empleo/Orientacion+Laboral/riiopn/home/Trabajar/Busqueda+de+Empleo/Guia+Empleo/Plan+Busqueda/Herramientas+de+busqueda/Curriculum.htm">Búsqueda de CV</a></li>
+										<li><a href="https://support.personio.de/hc/es/articles/360010193018-An%C3%A1lisis-de-CV-Creaci%C3%B3n-manual-de-perfiles-de-candidatos-a-partir-de-sus-curr%C3%ADculum#:~:text=El%20an%C3%A1lisis%20de%20CV%20es,o%20su%20n%C3%BAmero%20de%20tel%C3%A9fono.">Análisis de CV</a></li>
+									</ul>
+								</section>
+
+							</div>-->
+						</div>
+					</div>
+				</div>
+{% endblock %}

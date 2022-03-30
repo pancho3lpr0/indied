@@ -1,0 +1,140 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block contenido %}
+		<!-- Main -->
+				<!-- Banner -->
+				<div id="banner-wrapper">
+					<div class="container">
+		
+						<div id="banner">
+							<h2>Indeed</h2>
+							<span>Deja que las empresas te encuentren</span>
+						</div>
+		
+					</div>
+				</div>
+				
+				<div id="main">
+					<div class="container">
+						<div class="row main-row">
+							<div class="col-8 col-12-medium">
+
+								<section>
+									<h2>¿Qué es indeed?</h2>
+									<p>Indeed es el sitio de empleo n.º 1 en todo el mundo, con más de 200 millones de visitantes individuales cada mes. Desde 2004, Indeed les ha brindado a los buscadores de empleo acceso gratuito a millones de empleos en miles de sitios web de empresas y bolsas de trabajo.</p>
+									<p>Como la red líder de anuncios de reclutamiento de pago por desempeño, Indeed dirige a millones de aspirantes seleccionados a empleos en todos los campos, y es la fuente más rentable de candidatos para miles de empresas.</p>
+									<p>Se creó en Estados Unidos en 2004 y desde este año ha permitido a millones de personas tener acceso a millones de empleos y bolsas de trabajo de diferentes empresas. Es por ello que tiene más de 200 millones de visitantes cada mes.</p>
+									<p>En el año 2011 empezó a permitir que los candidatos se presentasen a través de su página web o a publicar su currículum a través de la plataforma.</p>
+								</section>
+								<section>
+									<h2>Comentarios</h2>
+									<form action="" method="post">
+										{% csrf_token %}
+										{{ form }}
+										<input type="submit" value="Enviar">
+									</form>
+								</section>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<section>
+									<h2>¿Quién usa Indeed?</h2>
+									<ul class="small-image-list">
+										<li>
+											<a><img src="{% static 'images/indeed_logo.png' %}" alt="" class="left" /></a>
+											<p>Indeed para empleadores es una manera fácil de usar y rentable para que las empresas se conecten con solicitantes calificados en más de 60 países y 28 idiomas, con Indeed puedes ahorrar mucho tiempo y esfuerzo a la hora de buscar un empleo debido a su sencillez, siempre siendo proactivo a la hora de realizar tus búsquedas.</p>
+										</li>
+										<!--<li>
+											<a href="#"><img src="{% static 'images/pic1.jpg' %}" alt="" class="left" /></a>
+											<h4>James Doe</h4>
+											<p>Vitae magna eget odio amet mollis justo facilisis amet quis. Sed sagittis consequat.</p>
+										</li>-->
+									</ul>
+								</section>
+
+								<section>
+									<h2>¿Dónde se puede implementar Indeed?</h2>
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<ul class="small-image-list">
+													<li>
+														<a><img src="{% static 'images/cloud_icon.png' %}" alt="" class="left" /></a>
+														<p>Cloud</p>
+													</li>
+													<li>
+														<a><img src="{% static 'images/saas_icon.png' %}" alt="" class="left" /></a>
+														<p>SaaS</p>
+													</li>
+													<li>
+														<a><img src="{% static 'images/web_icon.png' %}" alt="" class="left" /></a>
+														<p>Web</p>
+													</li>
+													<!--<li>
+														<a href="#"><img src="{% static 'images/cloud_icon.png' %}" alt="" class="left" /></a>
+														<p>Android</p>
+													</li>
+													<li>
+														<a href="#"><img src="{% static 'images/cloud_icon.png' %}" alt="" class="left" /></a>
+														<p>iPhone</p>
+													</li>
+													<li>
+														<a href="#"><img src="{% static 'images/cloud_icon.png' %}" alt="" class="left" /></a>
+														<p>iPad</p>-->
+													</li>
+												</ul>
+											</div>
+											<div class="col-6 col-12-small">
+												<ul class="small-image-list">
+													<!--<li>
+														<p>Cloud</p>
+													</li>
+													<li>
+														<a href="#"></a>
+														<p>SaaS</p>
+													</li>
+													<li>
+														<a href="#"></a>
+														<p>Web</p>
+													</li>-->
+													<li>
+														<a><img src="{% static 'images/android_icon.png' %}" alt="" class="left" /></a>
+														<p>Android</p>
+													</li>
+													<li>
+														<a><img src="{% static 'images/iphone_icon.png' %}" alt="" class="left" /></a>
+														<p>iPhone</p>
+													</li>
+													<li>
+														<a><img src="{% static 'images/ipad_icon.png' %}" alt="" class="left" /></a>
+														<p>iPad</p>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</section>
+								<section>
+									<div class="col-12 col-12-small">
+										{% for comentariosForm in form %}
+										<li>
+											
+											
+											
+											<h4 style="color: blue;">{{ comentarios.nombre }}</h4>
+											<p>{{ comentarios.email }}</p>
+											<section>
+												<pre style="height: 300px; overflow-y: auto;">{{ comentarios.comentario }}</pre>
+												<br>
+											</section>
+										</li>
+										{% endfor %}
+									</div>
+								</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+{% endblock %}				

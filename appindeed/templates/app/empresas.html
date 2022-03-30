@@ -1,0 +1,167 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block contenido %}
+<div id="page-wrapper">
+    
+
+    <!-- Main -->
+        <div id="main">
+            <div class="container">
+                <div class="row main-row">
+                    <!--<div class="col-4 col-12-medium">
+
+                        <section>
+                            <h2>Imagenes y Videos de Indeed</h2>
+                            <p>This is <strong>Minimaxing</strong>, a fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a> and released for free by <a href="http://html5up.net">HTML5 UP</a>. It features
+                            a simple, lightweight design, solid HTML5 and CSS3 code, and full responsive support for desktop, tablet, and small displays.</p>
+                            <footer class="controls">
+                                <a href="http://html5up.net" class="button">More cool designs ...</a>
+                            </footer>
+                        </section>
+
+                    </div>
+                    <div class="col-4 col-6-medium col-12-small">
+
+                        <section>
+                            <h2>Who are you guys?</h2>
+                            <ul class="small-image-list">
+                                <li>
+                                    <a href="#"><img src="{% static 'images/pic2.jpg' %}" alt="" class="left" /></a>
+                                    <h4>Jane Anderson</h4>
+                                    <p>Varius nibh. Suspendisse vitae magna eget et amet mollis justo facilisis amet quis.</p>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'images/pic1.jpg' %}" alt="" class="left" /></a>
+                                    <h4>James Doe</h4>
+                                    <p>Vitae magna eget odio amet mollis justo facilisis amet quis. Sed sagittis consequat.</p>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </div>-->
+                    <div class="col-6 col-12-medium col-12-small">
+
+                        <section>
+                            <h2>Empresas</h2>
+                            <ul class="big-image-list">
+                                {% for empresa in empresas %}
+                                <li>
+                                    
+                                    <a><img src="{{ empresa.imagen.url }}" alt="" class="left" /></a>
+                                    
+                                    <h3>{{ empresa.title_business }}</h3></a>
+                                
+                                    <p>Empleos <br> {{ empresa.empleos }}</p>
+                                    <p>Salarios <br> {{ empresa.salarios }}</p>
+                                
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-6 col-12-medium">
+
+                        <section>
+                            <h2>Algunas alternativas a Indeed</h2>
+                            <p>Las siguientes son algunas alternativas a indeed:</p>
+                            <ul class="big-image-list">
+                                <li>
+                                    <a><img src="{% static 'images/facebook_business.jpeg' %}" alt="" class="left" /></a>
+                                    <a href="https://es-la.facebook.com/business" ><h3>Facebook for business</h3></a>
+                                    <p>Solución de marketing en redes sociales que ayuda a las empresas a crear planes de marketing personalizados basados en presupuesto y destinatarios específicos.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/naukri_rms.png' %}" alt="" class="left" /></a>
+                                    <a href="https://www.naukrirms.com/"><h3>Naukri RMS</h3></a>
+                                    <p>Cloud-based recruitment solution that assists businesses with requisition management, multi-channel sourcing, applicant tracking, etc.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/snagajob.jpg' %}" alt="" class="left" /></a>
+                                    <a href="https://www.snagajob.com/"><h3>Snagajob</h3></a>
+                                    <p>Snagajob te brinda las herramientas para reclutar y contratar a empleados en tu área, además de programación y mensajería en equipo gratis para tu primera ubicación.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/dice.png' %}" alt="" class="left" /></a>
+                                    <a href="https://www.dice.com/" ><h3>Dice</h3></a>
+                                    <p>Hiring solutions that allows businesses to source, attract, recruits and manage talent on a unified platform.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/bamboohr.png' %}" alt="" class="left" /></a>
+                                    <a href="https://www.bamboohr.com/" ><h3>BambooHR</h3></a>
+                                    <p>BambooHR cuenta con un seguimiento de candidatos (ATS) integrado como parte del galardonado paquete de información de software de Recursos Humanos basado en la nube.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/linkedin_business.png' %}" alt="" class="left" /></a>
+                                    <a href="https://business.linkedin.com/" ><h3>LinkedIn for Business</h3></a>
+                                    <p>Recruiting solution that enables businesses to create a brand page, attract talent, and hire qualified candidates.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/dice_central.png' %}" alt="" class="left" /></a>
+                                    <a href="https://dicecorp.com/" ><h3>DICE Central Station</h3></a>
+                                    <p>Web-based solution designed to reduce central station activity and data entry, providing a visual interface for operators.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/hired.png' %}" alt="" class="left" /></a>
+                                    <a href="https://hired.com/" ><h3>Hired</h3></a>
+                                    <p>Obtén talento tecnológico de primer nivel en minutos al día.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/angelist.jpeg' %}" alt="" class="left" /></a>
+                                    <a href="https://www.angellist.com/" ><h3>AngelList</h3></a>
+                                    <p>Cloud-based platform that helps startups search for candidates, source resumes and manage recruitments.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/idealist.png' %}" alt="" class="left" /></a>
+                                    <a href="https://www.idealist.org/es/" ><h3>Idealist</h3></a>
+                                    <p>Platform that avails job, and internship opportunities to job seekers and enable employers to post open positions and manage candidates</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/jobget.jpeg' %}" alt="" class="left" /></a>
+                                    <a href="https://www.jobget.com/" ><h3>JobGet</h3></a>
+                                    <p>JobGet is designed to help businesses connect with job seekers, post job listings, and hire candidates via a unified platform.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/moneyminder.png' %}" alt="" class="left" /></a>
+                                    <a href= "https://moneyminder.com/"><h3>MoneyMinder</h3></a>
+                                    <p>Diseñado para voluntarios y tesoreros sin ánimo de lucro, MoneyMinder ayuda a administrar los libros de forma rápida y sencilla sin necesidad de experiencia.</p>
+                                </li>
+                                <li>
+                                    <a><img src="{% static 'images/careerplug.png' %}" alt="" class="left" /></a>
+                                    <a href=""><h3>CareerPlug</h3></a>
+                                    <p>CareerPlug ofrece reclutamiento y software de recursos humanos para facilitar la contratación de empresas en crecimiento.</p>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <!--<div class="col-6 col-12-medium">
+
+                        <article class="blog-post">
+                            <h2>Just another blog post</h2>
+                            <a class="comments" href="#">33 comments</a>
+                            <a href="#"><img src="{% static 'images/pic6.jpg' %}" alt="" class="top blog-post-image" /></a>
+                            <h3>Magna Gravida Dolore</h3>
+                            <p>Aenean non massa sapien. In hac habitasse platea dictumst.
+                            Maecenas sodales purus et nulla sodales aliquam. Aenean ac
+                            porttitor metus. In hac habitasse platea dictumst. Phasellus
+                            blandit turpis in leo scelerisque mollis. Nulla venenatis
+                            ipsum nec est porta rhoncus. Mauris sodales sed pharetra
+                            nisi nec consectetur. Cras elit magna, hendrerit nec
+                            consectetur in, sollicitudin vitae justo. Cras amet aliquet
+                            Aliquam ligula turpis, feugiat id fermentum malesuada,
+                            rutrum eget turpis. Mauris sodales sed pharetra nisi nec
+                            consectetur. Cras elit magna, hendrerit nec consectetur
+                            in sollicitudin vitae.</p>
+                            <footer class="controls">
+                                <a href="#" class="button">Continue Reading</a>
+                            </footer>
+                        </article>
+
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

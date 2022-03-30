@@ -1,0 +1,140 @@
+<!--{% load static %}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Indeed Corporation{% block titulo %}{% endblock %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+        {% block estilos %}
+
+        {% endblock %}
+</head>
+<body>
+    <div id="page-wrapper">
+        <!--header-->
+        <div id="header-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+    
+                        <header id="header">
+                            <h1><a id="logo">Indeed</a></h1>
+                            <nav id="nav">
+                                <a href="/index" >Info</a>
+                                <a href="/imagenes" >Imagenes</a>                                
+                                <a href="/precios">Precios</a>
+                                <a href="/funcionalidades">Funciones y Empleos</a>
+                                <a href="/empresas">Empresas</a>
+                            </nav>
+                        </header>
+    
+                    </div>
+                </div>
+                <div class="row">
+                    <form action="/buscar/" method="get">
+                        <div class="col-12">
+                            <center>
+                            <input type="search" id="busqueda" placeholder="Busca aquí" name="busqueda" required="required">
+                            <button type="submit" value="Submit form">Buscar</button>
+                            </center>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Contenido -->
+
+        {% block contenido %}
+
+        {% endblock %}
+
+		<!-- Footer -->
+        <div id="footer-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 col-12-medium">
+
+                        <section>
+                            <h2>Acerca de</h2>
+                            <div>
+                                <div class="row">
+                                    <div class="col-3 col-6-medium col-12-small">
+                                        <ul class="link-list">
+                                            <li><a>Universidad Tecnológica del Oriente Michoacán</a></li>
+                                            <li><a href="https://www.google.com/maps/place/UTOM+Universidad+Tecnol%C3%B3gica+Del+Oriente+De+Michoacan/@19.8847084,-100.487503,15z/data=!4m5!3m4!1s0x0:0x29da8677c9abb4d3!8m2!3d19.8847084!4d-100.487503">Dirección: Comunidad de Santa Rita S/N, Maravatio, Mich.</a></li>
+                                            
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-6-medium col-12-small">
+                                        <ul class="link-list">
+                                            <li><a>Telefono: 447 150 8913</a></li>
+                                            <li><a>Correo electronico: utommaravatio@hotmail.com</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-6-medium col-12-small">
+                                        <ul class="link-list">
+                                            <li><a>Horario: Lunes a Viernes de 8:00 a 16:00</a></li>
+                                            <li><a href="https://twitter.com/utommaravatio">Twitter: UTOM Maravatio</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-6-medium col-12-small">
+                                        <ul class="link-list">
+                                            <li><a href="https://www.facebook.com/SalvemosALaUTOM">Facebook: UTOM Maravatío</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <!--<div class="col-4 col-12-medium">
+
+                        <section>
+                            <h2>Something of interest</h2>
+                            <p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
+                            Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
+                            mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
+                            lorem ipsum dolor sit blandit.</p>
+                            <footer class="controls">
+                                <a href="#" class="button">Oh, please continue ....</a>
+                            </footer>
+                        </section>
+
+                    </div>-->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <center>Somos UTOM</center>
+                            
+                        <!--<div id="copyright">
+                            
+                        </div>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+<!-- Scripts -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/browser.min.js' %}"></script>
+    <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/util.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    {% block scriptsss %}
+
+    {% endblock %}
+
+</body>
+</html>
