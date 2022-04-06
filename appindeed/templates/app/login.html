@@ -22,23 +22,23 @@
                         </button>
                     </div>
                     {% endif %}
-                    <div class="block">
+                    <div class="col-6">
                         <label for="username">Username</label>
                         {{ form.username }}
                     </div>
-                    <div class="block ">
+                    <div class="col-6">
                         <label for="password">Password</label>
                         {{ form.password }}
                     </div>
-                    <div class="block center">
+                    <div class="col-12">
                         <label for="remember_me">Remember me</label>
                         {{ form.remember_me }}
                     </div>
-                    <div class="block center">
+                    <div class="col-12">
                         <p><input name="submit" type="submit" value="Log In"></p>
                         <p><input name="reset" type="reset" value="Reset Form"></p>
                     </div>
-                    <div class="block center">
+                    <div class="col-12">
                         <p>¿No tienes una cuenta? registrate <a href=" (% url 'login' %}"> Aquí </a></p>
                     </div>
                 </form>
