@@ -18,7 +18,7 @@ class loginForm(AuthenticationForm):
     class Meta:
         model = User
         fields = ['username', 'password', 'remember_me']
-    user_name = forms.CharField(max_length=100, required=True, Widget=forms.Textlnput(attrs={'placeholder': 'Username', 'class': 'form-control'}))
+    user_name = forms.CharField(max_length=100, required=True, Widget=forms.TextInput(attrs={'placeholder': 'Username', 'class': 'form-control'}))
     password = forms.CharField(max_length=50, required=True, Widget=forms.forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'form-control', 'data-toggle': 'password', 'id': 'password', 'name': 'password'}))
     remember_me = forms.BooleanField(required=False)
     
