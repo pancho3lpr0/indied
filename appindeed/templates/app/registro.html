@@ -1,3 +1,6 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block contenido %}
 <h2 class="center">Registro Usuario</h2>
 <form action="#" method="post">
     {% csrf_token %}
@@ -47,3 +50,4 @@
         <p>¿Ya tienes una cuenta? Ingresa <a href="{% url 'login' %}"> Aquí </a></p>
     </div>
 </form>
+{% endblock %}
