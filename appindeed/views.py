@@ -57,7 +57,7 @@ def buscar(request):
 class Registro(View):
   form_class = userForm
   initial = {'key': 'value'}
-  template_name = 'app/pages/registro.html'
+  template_name = 'app/registro.html'
 
   def get (self, request, *args, **kwargs):
     form = self.form_class(initial=self.initial)

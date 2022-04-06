@@ -14,7 +14,7 @@ urlpatterns = [
     path('precios/', precios, name='precios'),
     path('buscar/', buscar, name='buscar'),
     path('registro/', Registro.as_view(), name='registro'),
-    path('login/', CustomLoginView.as_view(redirect_authenticated=True, template_name='app/login.html', authentication_form=loginForm), name='login'),
+    path('login/', CustomLoginView.as_view(redirect_authenticated_user=True, template_name='app/login.html', authentication_form=loginForm), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='app/logout.html'), name='logout'),
 ]
 
