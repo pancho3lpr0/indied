@@ -1,5 +1,5 @@
 from django import forms
-from .models import empleo,empresa,comentarios
+from .models import comentarios
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 

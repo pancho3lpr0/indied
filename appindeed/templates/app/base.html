@@ -26,11 +26,11 @@
                                 <a href="/precios">Precios</a>
                                 <a href="/funcionalidades">Funciones y Empleos</a>
                                 <a href="/empresas">Empresas</a>
-                                <a href=" (% url 'registro' %}">Registro</a>
+                                <a href="(% url 'registro' %}">Registro</a>
                                 {% if user.is_authenticated %}
-                                <a href=" (% url 'logout' %}" class="nav-item nav-link">Logout</a>
+                                <a href="(% url 'logout' %}">Logout</a>
                                 {% else %}
-                                <a href="{% url 'login' %}" class="nav-item nav-link">LogIn</a>
+                                <a href="{% url 'login' %}">LogIn</a>
                                 {% endif %}
                             </nav>
                         </header>
