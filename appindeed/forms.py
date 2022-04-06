@@ -1,4 +1,3 @@
-from tkinter import Widget
 from django import forms
 from .models import empleo,empresa,comentarios
 from django.contrib.auth.models import User
