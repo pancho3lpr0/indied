@@ -1,53 +1,53 @@
-        <h2 class="center">Registro Usuario</h2>
-        <form action="#" method="post">
-            {% csrf token %}
-            {% if form.errors %}
-               <div class="alert alert-danger alert-dismissible" role="alert">
-                    <div id="form errors">
-                        {% for key, value in form.errors.items %}
-                        <strong> ({ value )/strong>
-                        {% endfor %}
-                    </div>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            {% endif %}
-            <div class="one third first">
-                <label for="name">Nombre <span>*</span></label>
-                <input type%="text" name="({ form.first name.name }}" id="name" value="" size="22">
-            </div>
-            <div class="one third">
-                <label for="last name">Last Name <span>*</span></label>
-                <input type="text" name="{{ form.last name.name}}" id="last name" value="" size="22">
-            </div>
-            <div class="one_third">
-                <label for="last_name">Last Name <span>*</span></label>
-                <input type="text" name="{{ form.last_name.name}}" id="last_name" value="" size="22">
-            </div>
-            <div class="one third last">
-                <label for="username">Username</label>
-                <input type="text" name="({ form.username.name }}" id="username" value="" size="22">
-            </div>
-            <div class="one third first">
-                <label for="email">Email</label>
-                <input type="email" name=" ({ form.email.name }}" id="email" value="" size="22">
-            </div>
-            <div class="one third">
-                <label for="password">Password</label>
-                <input type="password" name="{{ form.passwordl.name }}" id="password" value="" size="22">
-            </div>
-            <div class="one third last">
-                <label for="password2">Repeat Password</label>
-                <input type="password" name="{{ form.password2.name )}" id="password2" value="" size="22">
-            </div>
-            <div class="block clear">
-                &nbsp;
-                <input name="submit" type="submit" value="Registrar User">
-                &nbsp;
-                <input name="reset" type="reset" value="Reset Form">
-            </div>
-            <div class="block center">
-                <p>¿Ya tienes una cuenta? Ingresa <a href="(% url 'login' %)"> Aquí </a></p>
-            </div>
-        </form>
+<h2 class="center">Registro Usuario</h2>
+<form action="#" method="post">
+    {% csrf_token %}
+    {% if form.errors %}
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <div id="form errors">
+            {% for key, value in form.errors.items %}
+            <strong> {{ value }}</strong>
+            {% endfor %}
+        </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+        <span> aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <div class="one third first">
+        <label for="name">Nombre <span>*</span></label>
+        <input type%="text" name="{{ form.first name.name }}" id="name" value="" size="22">
+    </div>
+    <div class="one third">
+        <label for="last name">Last Name <span>*</span></label>
+        <input type="text" name="{{ form.last name.name}}" id="last name" value="" size="22">
+    </div>
+    <div class="one_third">
+        <label for="last_name">Last Name <span>*</span></label>
+        <input type="text" name="{{ form.last_name.name}}" id="last_name" value="" size="22">
+    </div>
+    <div class="one third last">
+        <label for="username">Username</label>
+        <input type="text" name="{{ form.username.name }}" id="username" value="" size="22">
+    </div>
+    <div class="one third first">
+        <label for="email">Email</label>
+        <input type="email" name=" {{ form.email.name }}" id="email" value="" size="22">
+    </div>
+    <div class="one third">
+        <label for="password">Password</label>
+        <input type="password" name="{{ form.passwordl.name }}" id="password" value="" size="22">
+    </div>
+    <div class="one third last">
+        <label for="password2">Repeat Password</label>
+        <input type="password" name="{{ form.password2.name }}" id="password2" value="" size="22">
+    </div>
+    <div class="block clear">
+        &nbsp;
+        <input name="submit" type="submit" value="Registrar User">
+        &nbsp;
+        <input name="reset" type="reset" value="Reset Form">
+    </div>
+    <div class="block center">
+        <p>¿Ya tienes una cuenta? Ingresa <a href="{% url 'login' %}"> Aquí </a></p>
+    </div>
+</form>
