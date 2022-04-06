@@ -1,39 +1,50 @@
 {% extends "app/base.html" %}
 {% load static %}
 {% block contenido %}
-<h2 class="heading uppercase btmspace-30 center">Login Usuario</h2>
-<form method="POST">
-    {% csrf_token %}
-    {% if form.errors %}
-    <div class="alert alert-danger alert-dismissible" role="alert">
-        <div id="form errors">
-            {% for key, value in form.errors.items %}
-            <strong> {{value}}</strong>
-            {% endfor %}
+<div id="page-wrapper">
+    <!-- Main -->
+    <div id="main">
+        <div class="container">
+            <div class="row main-row">
+
+                <h2>Login Usuario</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    {% if form.errors %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <div id="form errors">
+                            {% for key, value in form.errors.items %}
+                            <strong> {{value}}</strong>
+                            {% endfor %}
+                        </div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                        <span> aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    <div class="block">
+                        <label for="username">Username</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="block ">
+                        <label for="password">Password</label>
+                        {{ form.password }}
+                    </div>
+                    <div class="block center">
+                        <label for="remember me">Remember me</label>
+                        {{ form.remember_me}}
+                    </div>
+                    <div class="block center">
+                        <p><input name="submit" type="submit" value="Log In"></p>
+                        <p><input name="reset" type="reset" value="Reset Form"></p>
+                    </div>
+                    <div class="block center">
+                        <p>¿No tienes una cuenta? registrate <a href=" (% url 'login' %}"> Aquí </a></p>
+                    </div>
+                </form>
+
+            </div>
         </div>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-        <span> aria-hidden="true">&times;</span>
-        </button>
     </div>
-    {% endif %}
-    <div class="block">
-        <label for="username">Username</label>
-        {{ form.username }}
-    </div>
-    <div class="block ">
-        <label for="password">Password</label>
-        {{ form.password }}
-    </div>
-    <div class="block center">
-        <label for="remember me">Remember me</label>
-        {{ form.remember_me}}
-    </div>
-    <div class="block center">
-        <p><input name="submit" type="submit" value="Log In"></p>
-        <p><input name="reset" type="reset" value="Reset Form"></p>
-    </div>
-    <div class="block center">
-        <p>¿No tienes una cuenta? registrate <a href=" (% url 'login' %}"> Aquí </a></p>
-    </div>
-</form>
+</div>
 {% endblock %}

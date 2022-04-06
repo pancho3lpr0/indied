@@ -1,22 +1,25 @@
 {% extends "app/base.html" %}
 {% load static %}
 {% block contenido %}
-<div class="wrapper row3">
-    <main class="container clear">
-      <div class="content three quarter">
-           <h2>Logout Complete</h2>
-             <div class="one third first">
-               <p>Has salido de la sesion correctamente.</p>
-             </div>
-             <div class="one third ">
-               <p>Volver al Inicio <a href=" {% url 'index' %}"> Aquí </a></p>
-             </div>
-             <div class="one third last">
-                <p>Iniciar sesión nuevamente <a href=" {% url 'login' %}"> Aquí </a></p>
-             </div>
+<div id="page-wrapper">
+  <!-- Main -->
+  <div id="main">
+    <div class="container">
+      <div class="row main-row">
+
+        <h2>Logout Complete</h2>
+        <div class="one third first">
+          <p>Has salido de la sesion correctamente.</p>
+        </div>
+        <div class="one third ">
+          <p>Volver al Inicio <a href=" {% url 'index' %}"> Aquí </a></p>
+        </div>
+        <div class="one third last">
+          <p>Iniciar sesión nuevamente <a href=" {% url 'login' %}"> Aquí </a></p>
+        </div>
+
       </div>
-      <!-- / main body -->
-      <div class="clear"></div>
-    </main>
+    </div>
+  </div>
 </div>
 {% endblock %}
