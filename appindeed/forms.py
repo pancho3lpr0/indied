@@ -12,12 +12,12 @@ class comentariosForm(forms.ModelForm):
 class userForm(UserCreationForm) :
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'user_name', 'email', 'password1', 'password2']
+        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
 
 class loginForm(AuthenticationForm):
     class Meta:
         model = User
-        fields = ['user_name', 'password', 'remember_me']
+        fields = ['username', 'password', 'remember_me']
     user_name = forms.CharField(max_length=100, required=True, Widget=forms.Textlnput(attrs={'placeholder': 'Username', 'class': 'form-control'}))
     password = forms.CharField(max_length=50, required=True, Widget=forms.forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'form-control', 'data-toggle': 'password', 'id': 'password', 'name': 'password'}))
     remember_me = forms.BooleanField(required=False)
