@@ -54,7 +54,7 @@ def buscar(request):
     else:
         return render(request, 'app/buscar.html')
 
-class Registro (View):
+class Registro(View):
   form_class = userForm
   initial = {'key': 'value'}
   template_name = 'app/pages/registro.html'
@@ -78,7 +78,7 @@ class Registro (View):
     # else process dispatch as it otherwise normally would
     return super (Registro, self).dispatch(request, *args, **kwargs)
 
-class CustomLoginView (LoginView) :
+class CustomLoginView(LoginView) :
  form_class = loginForm
  def form_valid (self, form) :
     remember_me = form.cleaned_data.get ('remember_me')
