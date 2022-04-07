@@ -47,9 +47,9 @@
                                 {% for empresa in empresas %}
                                 <li>
                                     
-                                    <a><img src="{{ empresa.imagen.url }}" alt="" class="left" /></a>
+                                    <img src="{{ empresa.imagen.url }}" alt="" class="left" />
                                     
-                                    <h3>{{ empresa.title_business }}</h3></a>
+                                    <h3>{{ empresa.title_business }}</h3>
                                 
                                     <p>Empleos <br> {{ empresa.empleos }}</p>
                                     <p>Salarios <br> {{ empresa.salarios }}</p>
