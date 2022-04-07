@@ -6,7 +6,7 @@
     <div id="main">
         <div class="container">
             <div class="row main-row">
-
+                <center>
                 <h2 class="col-12">Login Usuario</h2>
                 <form method="POST">
                     {% csrf_token %}
@@ -23,18 +23,18 @@
                     </div>
                     {% endif %}
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12">
                             <label for="username">Username</label>
                             {{ form.username }}
                         </div>
-                        <div class="col-6">
+                        <div class="col-12">
                             <label for="password">Password</label>
                             {{ form.password }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <label for="remember_me">Remember me</label>
+                            <label class="checkbox" for="remember_me">Remember me</label>
                             {{ form.remember_me }}
                         </div>
                         <div class="col-12">
@@ -47,7 +47,7 @@
                         <p>¿No tienes una cuenta? registrate <a href=" (% url 'login' %}"> Aquí </a></p>
                     </div>
                 </form>
-
+            </center>
             </div>
         </div>
     </div>

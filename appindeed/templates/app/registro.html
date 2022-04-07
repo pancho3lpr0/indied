@@ -6,7 +6,7 @@
     <div id="main">
         <div class="container">
             <div class="row main-row">
-
+                <center>
                 <h2 class="col-12">Registro Usuario</h2>
                 <br>
                 <form action="#" method="post">
@@ -15,56 +15,51 @@
                     <div class="alert alert-danger alert-dismissible" role="alert">
                         <div id="form_errors">
                             {% for key, value in form.errors.items %}
-                            <strong> {{ value }}</strong>
+                            <strong>{{ value }}</strong>
                             {% endfor %}
                         </div>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-                        <span aria-hidden="true">&times;</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     {% endif %}
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="first_name">Nombre <span>*</span></label>
-                            <input type="text" name="{{ form.first_name.name }}" id="first_name" value="" size="22">
-                        </div>
-                        <div class="col-6">
-                            <label for="last_name">Last Name <span>*</span></label>
-                            <input type="text" name="{{ form.last_name.name }}" id="last_name" value="" size="22">
-                        </div>
+                    <div class="col-12 col-lg-6 single-event">
+                        <label for="name" style="color:blue">Nombre <span>*</span></label>
+                        <input type="text" name="{{ form.first_name.name }}" id="name" value="" size="22">
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="username">Username</label>
-                            <input type="text" name="{{ form.username.name }}" id="username" value="" size="22">
-                        </div>
-                        <div class="col-6">
-                            <label for="email">Email</label>
-                            <input type="email" name=" {{ form.email.name }}" id="email" value="" size="22">
-                        </div>
+                    <div class="col-12 col-lg-6 single-event">
+                        <label for="last_name" style="color:blue">Last Name <span>*</span></label>
+                        <input type="text" name="{{ form.last_name.name}}" id="last_name" value="" size="22">
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="password">Password</label>
-                            <input type="password" name="{{ form.passwordl.name }}" id="password" value="" size="22">
-                        </div>
-                        <div class="col-6">
-                            <label for="password2">Repeat Password</label>
-                            <input type="password" name="{{ form.password2.name }}" id="password2" value="" size="22">
-                        </div>
+                    <div class="col-12 col-lg-6 single-event">
+                        <label for="username" style="color:blue">Username</label>
+                        <input type="text" name="{{ form.username.name }}" id="username" value="" size="22">
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 col-lg-6 single-event">
+                        <label for="email" style="color:blue">Email</label>
+                        <input type="email" name="{{ form.email.name }}" id="email" value="" size="22">
+                    </div>
+                    <div class="col-12 col-lg-6 single-event">
+                        <label for="password" style="color:blue">Password</label>
+                        <input type="password" name="{{ form.password1.name }}" id="password" value="" size="22">
+                    </div>
+                    <div class="col-12 col-lg-6 single-event">
+                        <label for="password2" style="color:blue">Repeat Password</label>
+                        <input type="password" name="{{ form.password2.name }}" id="password2" value="" size="22">
+                    </div>
+                    <div class="block clear">
                         &nbsp;
+                        <br>
                         <input name="submit" type="submit" value="Registrar User">
                         &nbsp;
                         <input name="reset" type="reset" value="Reset Form">
                     </div>
-                    <br>
-                    <div class="col-12">
-                        <p>¿Ya tienes una cuenta? Ingresa <a href="{% url 'login' %}"> Aquí </a></p>
+                    <div class="block center">
+                        <br>
+                        <p>¿Ya tienes una cuenta? Ingresa<a href="{% url 'login' %}" style="color:blue"> Aquí </a></p>
                     </div>
                 </form>
-
+            </center>
             </div>
         </div>
     </div>
