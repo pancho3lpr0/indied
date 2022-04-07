@@ -13,7 +13,7 @@
                     {% csrf_token %}
                     {% if form.errors %}
                     <div class="alert alert-danger alert-dismissible" role="alert">
-                        <div id="form errors">
+                        <div id="form_errors">
                             {% for key, value in form.errors.items %}
                             <strong> {{ value }}</strong>
                             {% endfor %}
@@ -25,11 +25,11 @@
                     {% endif %}
                     <div class="row">
                         <div class="col-6">
-                            <label for="first_name">Nombre <span></span></label>
+                            <label for="first_name">Nombre <span>*</span></label>
                             <input type="text" name="{{ form.first_name.name }}" id="first_name" value="" size="22">
                         </div>
                         <div class="col-6">
-                            <label for="last_name">Last Name <span></span></label>
+                            <label for="last_name">Last Name <span>*</span></label>
                             <input type="text" name="{{ form.last_name.name }}" id="last_name" value="" size="22">
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-6">
                             <label for="password2">Repeat Password</label>
-                            <input type="password2" name="{{ form.password2.name }}" id="password2" value="" size="22">
+                            <input type="password" name="{{ form.password2.name }}" id="password2" value="" size="22">
                         </div>
                     </div>
                     <div class="col-12">
