@@ -25,27 +25,26 @@
                             {% endif %}
                             <div class="row">
                                 <div class="col-12">
-                                    <label for="username">Username</label>
+                                    <label for="username" style="color:blue">Username</label>
                                     {{ form.username }}
                                 </div>
                                 <div class="col-12">
-                                    <label for="password">Password</label>
+                                    <label for="password" style="color:blue">Password</label>
                                     {{ form.password }}
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
+                                <!--<div class="col-12">
                                     <label class="checkbox" for="remember_me">Remember me</label>
                                     {{ form.remember_me }}
-                                </div>
-                                <div class="col-12">
-                                    <p><input name="submit" type="submit" value="Log In"></p>
-                                    <p><input name="reset" type="reset" value="Reset Form"></p>
-                                </div>
+                                </div>-->
+                                <br>
+                            <div class="col-12">
+                                <p><input name="submit" type="submit" value="Log In"></p>
+                                <p><input name="reset" type="reset" value="Reset Form"></p>
                             </div>
                             <br>
                             <div class="col-12">
-                                <p>¿No tienes una cuenta? registrate <a href=" (% url 'login' %}"> Aquí </a></p>
+                                <p>¿No tienes una cuenta? registrate <a href=" (% url 'login' %}" style="color:blue"> Aquí </a></p>
                             </div>
                         </form>
                     </center>
