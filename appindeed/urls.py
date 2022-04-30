@@ -1,12 +1,12 @@
 from django.urls import path, include
-from .views import index, imagenes, base, empresas, precios, funcionalidades, buscar, Registro, CustomLoginView
+from .views import inicio, imagenes, base, empresas, precios, funcionalidades, buscar, Registro, CustomLoginView
 from django.conf import settings
 from django.conf.urls.static import static
 from .forms import loginForm
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', inicio, name='inicio'),
     path('imagenes/', imagenes, name='imagenes'),
     path('base/', base, name='base'),
     path('empresas/', empresas, name='empresas'),

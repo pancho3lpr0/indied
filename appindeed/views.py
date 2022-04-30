@@ -19,7 +19,7 @@ def empresas(request):
     }
     return render(request, 'app/empresas.html', datos)
 
-def index(request):
+def inicio(request):
     datos = {
         "form": comentariosForm
     }
@@ -30,7 +30,7 @@ def index(request):
             formulario.save()
         else:
             datos["form"] = formulario
-    return render(request, 'app/index.html', datos)
+    return render(request, 'app/inicio.html', datos)
 
 def precios(request):
     return render(request, 'app/precios.html')

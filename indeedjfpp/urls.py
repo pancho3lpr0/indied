@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('appindeed.urls')),
+    path('digits/', include('digits.urls')),
 ]

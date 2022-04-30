@@ -1,0 +1,138 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block contenido %}
+
+<div id="main">
+    <center>
+    <div class="text-center" style="padding: 20px">
+        <h3 style="color:blue">RECONOCIMIENTO DE DÍGITOS</h3>
+        <div class="card-body">
+            <h5 class="card-title">Escriba un dígito para identificar</h5>
+
+            <h3 id="resultado">Resultado: </h3>
+            <div class="col-12">
+                <div id="sketch" style="width:200px; height: 200px; border: 1px solid black;">
+                    <canvas id="paint"></canvas>
+                </div>
+            </div>
+
+           <div style="margin: 10px">
+                <div style="align-content: center;">
+                <a class="btn btn-warning" href="/digits/train"><button>Entrenar</button></a>
+                <button style="padding: 10px" class="btn btn-danger clear-canvas" type="button">Limpiar</button>
+                <button style="padding: 10px" class="btn btn-primary" type="button" id="submit-image">Procesar</button>
+                </div>
+           </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h5>Seleccione una imagen para procesar</h5>
+        </div>
+        <div class="col-12 text-center">
+
+            <form action="/digits/predict_uploaded_image" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group col-12">
+                    <input type="file" name="image">
+                </div>
+                <br>
+                <div class="col-12">
+                    <button style="width: 40%" class="btn btn-secondary" type="submit">Subir</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12 text-center">
+            {% for message in messages %}
+                <span class="{{ message.tags }}">
+                {% if 'result' in message.tags %}
+                    <h3 id="resultado">Resultado: {{ message }}</h3>
+                {% endif %}
+                </span>
+            {% endfor %}
+        </div>
+    </div>
+    </center>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+<script>
+
+ (function() {
+    var canvas = document.querySelector('#paint');
+    var ctx = canvas.getContext('2d');
+
+    var sketch = document.querySelector('#sketch');
+    var sketch_style = getComputedStyle(sketch);
+    canvas.width  = 200;
+    canvas.height = 200;
+    canvas.style.width  = '200px';
+    canvas.style.height = '200px';
+
+    var mouse = {x: 0, y: 0};
+    var last_mouse = {x: 0, y: 0};
+
+    /* Mouse Capturing Work */
+    canvas.addEventListener('mousemove', function(e) {
+        last_mouse.x = mouse.x;
+        last_mouse.y = mouse.y;
+
+        mouse.x = e.pageX - this.offsetLeft;
+        mouse.y = e.pageY - this.offsetTop;
+    }, false);
+
+
+    /* Drawing on Paint App */
+    ctx.lineWidth = 10;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'black';
+
+    canvas.addEventListener('mousedown', function(e) {
+        canvas.addEventListener('mousemove', onPaint, false);
+    }, false);
+
+    canvas.addEventListener('mouseup', function() {
+        canvas.removeEventListener('mousemove', onPaint, false);
+    }, false);
+
+    var onPaint = function() {
+        ctx.beginPath();
+        ctx.moveTo(last_mouse.x, last_mouse.y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.closePath();
+        ctx.stroke();
+    };
+
+    var clear = document.querySelector('.clear-canvas');
+    clear.addEventListener('click', function(e) {
+        const context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        var p = document.querySelector('#resultado');
+            p.innerHTML = "Resultado: ";
+    });
+
+    var submit = document.querySelector('#submit-image');
+    submit.addEventListener('click', function(e) {
+
+        $.ajax({
+          type: "POST",
+          url: "/digits/predict",
+          data: {
+             csrfmiddlewaretoken: window.CSRF_TOKEN,
+             digitImage: canvas.toDataURL()
+          }
+        }).done(function(data) {
+            var p = document.querySelector('#resultado');
+            p.innerHTML = "Resultado: " + data.result;
+        });
+
+    });
+
+}());
+</script>
+
+
+{% endblock %}
